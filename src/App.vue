@@ -1,29 +1,25 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template id="app">
+  <accomodements titre="Page des accomodements - POC"></accomodements>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from "vue-property-decorator";
+import Accomodements from "./components/accomodements.vue";
+import { FrenchPlugin, ModulComponentPlugin } from "@ulaval/modul-components";
+import store from "./store";
 
-@Component({
+Vue.use(ModulComponentPlugin);
+Vue.use(FrenchPlugin);
+
+export default {
+  name: "app",
   components: {
-    HelloWorld,
+    Accomodements
   },
-})
-export default class App extends Vue {}
+  store
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "~@ulaval/modul-components/dist/modul.min.css";
 </style>
