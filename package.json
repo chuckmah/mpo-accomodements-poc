@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "wc": "vue-cli-service build --target wc --name mpo-accomodements ./src/App.vue"
+    "build": "vue-cli-service build --mode development",
+    "wc": "vue-cli-service build --target wc --name mpo-accomodements ./src/AppWC.vue"
   },
   "dependencies": {
-    "@ulaval/modul-components": "^1.0.0-RC.0",
+    "@ulaval/modul-components": "file:../modul/packages/modul-components/ulaval-modul-components-v1.0.0-RC.0.tgz",
     "@vue/web-component-wrapper": "^1.2.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
+    "vue-custom-element": "^3.2.12",
     "vue-property-decorator": "^8.3.0",
     "vuex": "^3.1.2"
   },

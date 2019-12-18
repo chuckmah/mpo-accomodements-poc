@@ -1,40 +1,48 @@
 <template>
-  <div class="m-u--app-body accomodements">
-    <h1 v-text="titre"></h1>
-    <m-button @click="reset">
-      <m-icon name="m-svg__error"></m-icon>Vider le champs
-    </m-button>
-    <m-textfield v-model="data"></m-textfield>
-    <br />
-    <br />
-    <br />
-    {{options}}
-    <m-multi-select :options="options" v-model="model" label="Label" placeholder="Choisir un fruit"></m-multi-select>
-    <br />
-    <br />
-    <br />
-    <m-modal>
-      <m-button slot="trigger">Ouvrir la modal</m-button>Contenu de la modal
-    </m-modal>
-    <br />
-    <br />
-    <br />
-    <m-accordion-group>
-      <m-accordion>Some Accordion Content</m-accordion>
-      <m-accordion>Some Accordion Content</m-accordion>
-      <m-accordion>Some Accordion Content</m-accordion>
-    </m-accordion-group>
-  </div>
+  <div class="accomodements">
+      <HelloWorld msg="Welcome to Your Vue.js + TypeScript + MODUL App"/>
+      <boutons></boutons>
+      <contenu></contenu>
+      <fenetres></fenetres>
+      <navigation></navigation>
+      <tableaux></tableaux>
+      <formulaire></formulaire>
+  </div> 
 </template>
 
 <script lang="ts">
 import { Component, Model, Prop, Vue } from "vue-property-decorator";
+import HelloWorld from './HelloWorld.vue';
+import Boutons from './Boutons.vue';
+import Contenu from './Contenu.vue';
+import Fenetres from './Fenetres.vue';
+import Formulaire from './Formulaire.vue';
+import Navigation from './Navigation.vue';
+import Tableaux from './Tableaux.vue';
 
-@Component
+@Component({
+  components: {
+    HelloWorld,
+    Boutons,
+    Contenu,
+    Fenetres,
+    Formulaire,
+    Navigation,
+    Tableaux,
+  },
+})
 export default class Accomodements extends Vue {
   public data: string = "Valeur par défaut";
   public options: string[] = ["Pomme", "Poire", "Ananas"];
   public model: string[] = [];
+
+  created() {
+    console.log('Accomodements created');
+  }
+
+  destroyed() {
+    console.log('Accomodements destoryed');
+  }
 
   @Prop()
   private titre!: string;

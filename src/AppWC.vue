@@ -1,19 +1,18 @@
 <template id="app">
-
-
   <div class="m-u--app-body">
-
-    <accomodements titre="Page des accomodements - POC"></accomodements>
+  <link rel="stylesheet">
+  <accomodements titre="Page des accomodements - POC"></accomodements>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Accomodements from "./components/accomodements.vue";
+//import { FrenchPlugin, ModulComponentPlugin } from "@ulaval/modul-components";
 import store from "./store";
 
-console.log('IM in APP.vue!');
-
+// Vue.use(ModulComponentPlugin);
+// Vue.use(FrenchPlugin);
 
 export default {
   name: "app",
@@ -25,9 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-    $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required. 
-
-    @import "~@ulaval/modul-components/dist/styles/main.scss";
-
-    @import "~@ulaval/modul-components/dist/modul.min.css";
+//  @import "~@ulaval/modul-components/dist/modul.min.css";
 </style>
